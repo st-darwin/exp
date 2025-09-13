@@ -69,10 +69,25 @@ function addTask(){
 
 
  //////
-     
+          
     delbtn.addEventListener("click" , event =>{
-    event.target.parentElement.remove()
-     localStorage.setItem("expenses" , list.innerHTML)
+    //event.target.parentElement.remove()
+     //localStorage.setItem("expenses" , list.innerHTML)
+     delbtn.addEventListener("click" , event =>{
+    const li = event.target.parentElement;
+    const priceText = li.querySelector("span:nth-child(2)").textContent; // e.g. "$50"
+    const priceValue = parseFloat(priceText.replace("$", "")); // 50
+
+    exp = exp.filter(val => val !== priceValue);
+
+    li.remove();
+
+    localStorage.setItem("expenses" , list.innerHTML);
+
+    getTotal();
+    getBal();
+});
+
   
 })
 
@@ -88,13 +103,13 @@ function getExpense(){
 
 }
 function getTotal(){///the sum of the prices
-const total = exp.reduce((previous , current ) => previous + current) 
+const total = exp.reduce((previous , current , 0 ) => previous + current) 
 document.getElementById("expenseNumber").textContent = `$${total}`
 return total
 }
 
 function getBal(){
-const totalExpense = getExpense()
+const totalExpense = getTotal()
 const totalBudget = getBudget()
 totalBal = Number(totalBudget) - Number(totalExpense)
 console.log(totalBal)
@@ -114,5 +129,6 @@ window.addEventListener("DOMContentLoaded" , ()=>{
         })
     })
 })
+
 
 
