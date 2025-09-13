@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="expense.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exile&family=Lexend:wght@100..900&family=Pacifico&family=Sevillana&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Pacifico&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section id="container">
+ <h1 class="header">Expense Tracker</h1>
+ <form>
+
+ <div><input id="budgetValue" type="number" required placeholder="Enter your Budget..🌚"><button id="calBtn">Calculate</button></div>
+<div>
+     <input id="productValue" type="text" required placeholder="Product Details">
+ <input type="number" id="priceValue" required placeholder=" Enter Your Price"><button id="addBtn">Add Expense</button>
+</div>
+ </form>
+
+<section id="badges">
+
+<div id="badge">
+<p><i class="fa-solid fa-wallet"></i></p>
+<p id="budgetNumber">$0</p> <br>
+<p id="blockName">Budget</p>
+</div>
+
+<div id="badge">
+<p><i class="fa-solid fa-credit-card"></i></p>
+<p id="expenseNumber">$0</p> <br>
+<p id="blockName">Expenses</p>
+</div>
+
+<div id="badge">
+<p><i class="fa-solid fa-comments-dollar"></i></p>
+<p id="balNumber">$0</p> <br>
+<p id="blockName">Balance</p>
+</div>
+</section>
+
+<section id="details">
+    <h1 class="bud-det-text" >
+        Budget details
+    </h1>
+    <div class="list-div"> <ul id="list"></ul></div>
+   
+ 
+    </ul>
+</section>
+
+
+
+</section>
+
+    <script src="expense.js"></script>
+</body>
+</html>
